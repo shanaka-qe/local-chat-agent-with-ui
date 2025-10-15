@@ -1,6 +1,11 @@
 # Local Chatbot with Web UI (LangChain + Ollama + ChainLit + optional LangSmith)
 
+**Author:** Shanaka Navaratne  
+**LinkedIn:** https://www.linkedin.com/in/shanaka-qe/  
+
 This is a **multi-model chatbot** that runs entirely on your machine using local LLMs served by Ollama. It features a modern web UI built with ChainLit for an intuitive chat experience with **dynamic model switching**. The chatbot keeps per-session chat history so the model answers with context. Optionally, you can enable LangSmith to trace and inspect your conversations for debugging/evaluation.
+
+> 📖 **For detailed setup instructions, see [USER_GUIDE.md](USER_GUIDE.md)**
 
 ## 🌟 Key Features
 - **🔄 Multi-Model Support**: Switch between different Ollama models (Llama, Gemma, Mistral, etc.) on the fly
@@ -19,74 +24,38 @@ This is a **multi-model chatbot** that runs entirely on your machine using local
   - **Compare different models** side-by-side in the same conversation
   - Optionally enable LangSmith tracing
 
-## Prerequisites
-1) Install Python 3.10+
-2) Install Ollama and pull multiple models
+## Quick Start
+
 ```bash
-brew install ollama # macOS (or see ollama.ai for your OS)
-ollama serve
-
-# Pull multiple models for comparison
-ollama pull gemma3:4b      # Fast, efficient model
-ollama pull llama3:latest # High-quality model
-ollama pull mistral:latest # Alternative model
-ollama pull codellama:latest # Code-focused model
-```
-
-## Setup
-```bash
-# (Recommended) Create and activate a virtual environment
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-
-# Install dependencies
+# 1. Install dependencies
 pip install -r requirements.txt
 
-# Create your environment file (optional - defaults will be used if not created)
-# Create .env file with your preferred settings:
-cat > .env << EOF
-LANGSMITH_API_KEY=your_langsmith_api_key_here   # optional
-LANGSMITH_PROJECT=langchain-chatbot            # optional
-OLLAMA_MODEL=gemma3:4b                         # local model name in Ollama
-# OLLAMA_BASE_URL=http://localhost:11434       # optional if non-default
-EOF
-```
+# 2. Start Ollama (in separate terminal)
+ollama serve
 
-## Run
+# 3. Download a model
+ollama pull gemma3:4b
 
-```bash
+# 4. Run the application
 chainlit run ui_app.py
 ```
 
-Then open your browser to `http://localhost:8000` to access the web chat interface.
+Open your browser to `http://localhost:8000` to access the web chat interface.
 
 ![ChainLit Web Interface](chat-ui.png)
 
-**Features:**
+### Key Features
 - 🎨 Modern chat UI similar to ChatGPT
 - 🔄 **Multi-Model Support**: Switch between different Ollama models on the fly
-- 💬 Real-time message streaming
-- 📝 **Conversation Memory**: Maintains context across model switches
-- 👥 Session management (multiple users can chat simultaneously)
+- 💬 Real-time message streaming with conversation memory
 - 🔧 **Model Discovery**: Automatically finds all available Ollama models
-- 🧪 **Model Testing**: Test and compare different models
 - 📊 Optional LangSmith tracing for debugging
 
-**Available Commands:**
+### Available Commands
 - `clear`: Reset conversation memory
 - `memory`: See conversation history
-- `switch model`: Change the active model
 - `model info`: Display current model details
 - `test model`: Test the current model connection
-
-**Multi-Model Capabilities:**
-- 🔄 **Dynamic Model Switching**: Use the settings panel (⚙️) to select from available models
-- 🔍 **Automatic Model Discovery**: Models are automatically discovered from your Ollama installation
-- 💾 **Context Preservation**: Conversation history is preserved when switching models
-- 🧠 **Per-Model Memory**: Each model maintains its own conversation context
-- ⚡ **Instant Switching**: Change models mid-conversation without losing context
-- 🧪 **Model Comparison**: Test different models on the same conversation
-- 📊 **Model Information**: View detailed info about each model's configuration
 
 ## 🚀 Multi-Model Workflow Example
 

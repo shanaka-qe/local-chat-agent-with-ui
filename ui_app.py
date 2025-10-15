@@ -1,6 +1,8 @@
 """
 ChainLit UI for the LangChain Chatbot with Model Selection Dropdown.
 This file creates a web interface for your existing chatbot.
+
+Author: Shanaka Navaratne
 """
 import os
 import chainlit as cl
