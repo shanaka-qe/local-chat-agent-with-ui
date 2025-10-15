@@ -1,0 +1,16 @@
+# Core LangChain dependencies - Latest stable versions
+langchain
+langchain-ollama
+langsmith
+
+# Ollama Python client for local model interaction
+ollama
+
+# Environment variable management
+python-dotenv
+
+# Additional utilities
+requests
+
+# Chainlit
+chainlit
