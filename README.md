@@ -175,4 +175,4 @@ local-chat-bot-with-ui/
 - The project runs your model locally; no prompts or responses are sent to remote LLMs unless you enable LangSmith tracing, which sends metadata to LangSmith.
 
 ## License
-Educational example. Use and modify as you like.
+MIT License. Educational example. Use and modify as you like. See [LICENSE](LICENSE).
