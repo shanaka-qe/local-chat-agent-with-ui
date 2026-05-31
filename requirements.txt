@@ -1,5 +1,6 @@
 # Core LangChain dependencies - Latest stable versions
 langchain
+langchain-community
 langchain-ollama
 langsmith
 
